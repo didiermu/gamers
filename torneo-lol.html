@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preload" href="css/styles.min.css" as="style">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="...">
+    <meta property="og:title" content="...">
+    <meta property="og:description" content="...">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" defer> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css">
+    <title>Gamers Unite | Torneo Fornite</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.3/dist/css/datepicker.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.3/dist/js/datepicker-full.min.js" defer> </script>
+    <script src="js/functions.min.js" defer></script>
+    <body>
+      <main class="home">
+        <div class="container-black">   
+          <section class="about">
+            <div class="container-xxl container-fluid d-flex justify-content-center">
+              <div class="col-lg-9 justify-content-center d-flex">
+                <div class="about--content">
+                  <h1 class="mb-5">Invocador, estás muy cerca de comenzar tú camino hacia la gloria dentro de la DragonSoul Cup by Gamers Unite patrocinado por Citibanamex.</h1>
+                  <h2> Completa tu registro para estar dentro de la lista de los jugadores que serán elegidos por nuestros capitanes para armar un equipo de ensueño. ¡Suerte!</h2>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="registro padding-top-0" id="registro">
+            <div class="container-lg container-fluid">
+              <form class="col-lg-10" id="form-registro">
+                <div class="form-bg-paso bg-registro">
+                  <div class="registro__paso align-h-col justify-content-center" id="registro-paso-uno">
+                    <div class="bg-paso-uno positio-absolute">
+                      <picture>
+                        <source srcset="img/mancha_form.webp" type="image/webp"><img class="img-fluid tam-bg" src="img/mancha_form.png" alt="img">
+                      </picture>
+                      <div class="personaje-01-lol-pasouno positio-absolute">
+                        <picture>
+                          <source srcset="img/personaje_01.webp" type="image/webp"><img class="img-fluid" src="img/personaje_01.png" alt="img">
+                        </picture>
+                      </div>
+                      <div class="personaje-02-lol-pasodos positio-absolute">
+                        <picture>
+                          <source srcset="img/personaje_02.webp" type="image/webp"><img class="img-fluid" src="img/personaje_02.png" alt="img">
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="input padding-top-140">
+                      <label class="font-text-14">*Nombre completo</label>
+                      <input class="input-altura font-text-14" id="nombre" type="text" name=""><span class="error-input font-error-green">*Campo requerido</span>
+                    </div>
+                    <div class="input">
+                      <label class="font-text-14" for="fecha">*Fecha de nacimiento</label>
+                      <div id="input-fecha">
+                        <input class="input-altura font-text-14" id="fecha" name="fecha" placeholder="DD/MM/AAAA"><span class="error-input font-error-green">*Campo requerido</span>
+                      </div>
+                    </div>
+                    <div class="input"> 
+                      <label class="font-text-14">*Correo electrónico</label>
+                      <input class="input-altura font-text-14" id="email" type="text" name=""><span class="error-input font-error-green">Campo requerido</span>
+                    </div>
+                    <div class="input"> 
+                      <label class="font-text-14">*Teléfono celular</label>
+                      <input class="input-altura font-text-14" id="celular" type="text" name=""><span class="error-input font-error-green">*Campo requerido</span>
+                    </div>
+                    <div class="combo">
+                      <label class="font-text-14">*Lugar de residencia</label>
+                      <select class="font-text-14 input-altura-cd" id="combo-cd" onchange="this.size = 0;" onblur="this.size = 0;">
+                        <option value="" selected hidden>-- </option>
+                        <option value="AGS">Aguascalientes</option>
+                        <option value="BCN">Baja California</option>
+                        <option value="BCS">Baja California Sur</option>
+                        <option value="CDMX">CDMX</option>
+                        <option value="CAM">Campeche</option>
+                        <option value="CHP">Chiapas</option>
+                        <option value="CHI">Chihuahua</option>
+                        <option value="COA">Coahuila</option>
+                        <option value="COL">Colima</option>
+                        <option value="DUR">Durango</option>
+                        <option value="GTO">Guanajuato</option>
+                        <option value="GRO">Guerrero</option>
+                        <option value="HGO">Hidalgo</option>
+                        <option value="JAL">Jalisco</option>
+                        <option value="MEX">México</option>
+                        <option value="MIC">Michoacán</option>
+                        <option value="MOR">Morelos</option>
+                        <option value="NAY">Nayarit</option>
+                        <option value="NLE">Nuevo León</option>
+                        <option value="OAX">Oaxaca</option>
+                        <option value="PUE">Puebla</option>
+                        <option value="QRO">Querétaro</option>
+                        <option value="ROO">Quintana Roo</option>
+                        <option value="SLP">San Luis Potosí</option>
+                        <option value="SIN">Sinaloa</option>
+                        <option value="SON">Sonora</option>
+                        <option value="TAB">Tabasco</option>
+                        <option value="TAM">Tamaulipas</option>
+                        <option value="TLX">Tlaxcala</option>
+                        <option value="VER">Veracruz</option>
+                        <option value="YUC">Yucatán</option>
+                        <option value="ZAC">Zacatecas</option>
+                      </select><span class="error-input font-error-green">*Campo requerido</span>
+                    </div>
+                    <div class="caja-boton"> 
+                      <button class="boton prm font-btn button-skew" id="btn-next" type="button"><span class="registrar">SIGUIENTE</span></button>
+                    </div>
+                    <div class="stepper d-flex justify-content-center"><span class="active"></span><span></span></div>
+                  </div>
+                </div>
+                <div class="registro__paso align-h-col" id="registro-paso-dos">
+                  <div class="bg-paso-dos positio-absolute">
+                    <picture>
+                      <source srcset="img/bg-paso-dos.webp" type="image/webp"><img class="img-fluid tam-bg-paso-dos" src="img/bg-paso-dos.png" alt="img">
+                    </picture>
+                    <div class="personaje-02-lol-pasodos positio-absolute">
+                      <picture>
+                        <source srcset="img/personaje_02.webp" type="image/webp"><img class="img-fluid" src="img/personaje_02.png" alt="img">
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="input padding-top-140 input_group">
+                    <label class="font-text-14">*Riot ID / Nombre de invocador:</label>
+                    <input class="input-altura font-text-14" id="riotId" type="text" name="rioId" data-fixedvalue="#LAN"><span class="error-input font-error-green text-align-center-tablet">*Campo requerido</span>
+                    <div class="ayuda">
+                      <div class="button">
+                        <div class="picture"><img class="width-100" src="img/ayuda.svg" alt="tittle" loading="lazy">
+                          <div class="ayuda--tooltip">
+                            <picture> 
+                              <source srcset="img/Riot-ID.webp" type="image/webp"><img class="img-fluid" src="img/Riot-ID.png" alt="">
+                            </picture>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="combo-mobile">
+                    <div class="combo input_group">
+                      <div class="principal-sec01">
+                        <label class="font-text-14 text-align-center-tablet">*Elige tu posición principal:</label>
+                        <select class="input-altura font-text-14" id="posicion01" name="">
+                          <option value="" selected hidden>-- </option>
+                          <option value="top">Top</option>
+                          <option value="jungla">Jungla</option>
+                          <option value="mid">Mid</option>
+                          <option value="adc">Adc</option>
+                          <option value="soporte">Soporte</option>
+                        </select>
+                      </div>
+                      <div class="principal-sec02"><span class="error-input font-error-green width-100 text-align-center-tablet">*Campo requerido</span></div>
+                    </div>
+                    <div class="combo input_group">
+                      <div class="principal-sec01">
+                        <label class="font-text-14 text-align-center-tablet">Elige tu posición secundaria:</label>
+                        <select class="input-altura font-text-14" id="posicion02" name="">
+                          <option value="" selected hidden>-- </option>
+                          <option value="top">Top</option>
+                          <option value="jungla">Jungla</option>
+                          <option value="mid">Mid</option>
+                          <option value="adc">Adc</option>
+                          <option value="soporte">Soporte</option>
+                          <option value="nula">Nula</option>
+                        </select>
+                      </div>
+                      <div class="principal-sec02"></div>
+                    </div>
+                  </div>
+                  <div class="combo input_group">
+                    <label class="font-text-14">*Seleccionar rango:</label>
+                    <select class="input-altura font-text-14" id="rango" name="">
+                      <option value="" selected hidden>-- </option>
+                      <option value="Diamante-IV">Diamante IV</option>
+                      <option value="Diamante-III">Diamante III</option>
+                      <option value="Diamante-II">Diamante II</option>
+                      <option value="Diamante-I">Diamante I</option>
+                      <option value="master">Master</option>
+                      <option value="grandmaster">Grandmaster</option>
+                      <option value="challenger">Challenger</option>
+                    </select><span class="error-input font-error-green text-align-center-tablet">*Campo requerido</span>
+                  </div>
+                  <div class="combo-mobile combo-desktop contents">
+                    <div class="input in-ev-desktop input_group" id="input-evidencia">
+                      <div class="principal-sec01 principal-sec01-desktop">
+                        <label class="flex-basis-30 font-text-14 width-100 text-align-center-tablet">*Imagen de evidencia del rango seleccionado:</label>
+                        <label class="input-altura font-text-14 display-center label-mobile flex-basis-68 padding-0" id="input-label" for="evidencia">Cargar archivo</label>
+                        <input id="evidencia" type="file" name="evidencia">
+                      </div>
+                      <div class="principal-sec02 principal-sec02-desktop">
+                        <h5 class="flex-basis-76 font-text-14 margin-centro-mobile margin-center-mobile text-mobile-14px text-align-end">Tamaño máximo 5mb</h5><span class="error-input flex-basis-76 font-error-green margin-center-mobile margin-center-mobile text-align-center-tablet">*Campo requerido</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input input_group">
+                    <label class="font-text-14">Carga el link de tu reel:</label>
+                    <input class="input-altura font-text-14" id="url" type="text" name=""><span class="error-input font-error-green">*Campo requerido</span>
+                  </div>
+                  <div class="check-value" id="input-viaje">
+                    <div class="campos-radio width-100 space-start gap-0">
+                      <div class="checkbox-option">
+                        <h4 class="font-text-14">*Disponibilidad para viajar a la CDMX</h4>
+                      </div>
+                      <div class="check-inner-box">
+                        <div class="check" id="checkViaje">
+                          <div class="option_01">
+                            <label class="font-text-14" for="viajar">Si</label>
+                            <input class="input-altura" id="check-yes" type="radio" name="viajar" value="si">
+                          </div>
+                          <div class="option_02">
+                            <label class="font-text-14" for="viajar">No</label>
+                            <input class="input-altura" id="check-no" type="radio" name="viajar" value="no">
+                          </div>
+                        </div>
+                        <div class="radio-inner">
+                          <div class="radio-error"><span class="error-input font-error-green text-align-center-tablet">*Campo requerido</span></div>
+                        </div>
+                      </div>
+                      <h6 class="disclaimer">Recuerda que el torneo en vivo será en CDMX, por lo que debes aceptar la disponibilidad para viajar.</h6>
+                    </div>
+                  </div>
+                  <h3 class="texto-redes">Comparte tus redes sociales</h3>
+                  <div class="redes-inner">
+                    <div class="redes-group">
+                      <div class="input center-input margin-bot-mobile">
+                        <div class="d-flex social-center-inputs">
+                          <div class="row row-center-inputs">
+                            <div class="col-4 col-center">
+                              <div class="input width-100 input_group">
+                                <div class="social-01">
+                                  <label class="font-text-14">Instagram:</label>
+                                </div>
+                                <div class="social-inner-insta width-100">
+                                  <input class="width-100 input-altura" id="instagram" type="text" name=""><span class="error-input social-error-insta width-100 font-error-green text-align-center-mobile text-align-center-tablet">*Campo requerido</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-4 col-center">
+                              <div class="input width-100 input_group">
+                                <div class="social-01">
+                                  <label class="font-text-14">TikTok:</label>
+                                </div>
+                                <div class="social-inner-insta width-100">
+                                  <input class="width-100 input-altura" id="tiktok" type="text" name=""><span class="error-input social-error-insta width-100 font-error-green text-align-center-mobile text-align-center-tablet">*Campo requerido</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-4 col-center">
+                              <div class="input width-100 input_group">            
+                                <div class="social-01">
+                                  <label class="font-text-14">Twitch:</label>
+                                </div>
+                                <div class="social-inner-insta width-100">
+                                  <input class="width-100 input-altura" id="twitch" type="text" name=""><span class="error-input social-error-insta width-100 font-error-green text-align-center-mobile text-align-center-tablet">*Campo requerido</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="redes-inner redes-inner-tablet"></div>
+                  <div class="input input_group" id="caja-discord">
+                    <div class="discor-inner ancho-tablet">
+                      <label class="font-text-14 text-center-mobile text-align-center-tablet">*Usuario Discord</label>
+                      <input class="input-altura" id="discord" type="text" name="">
+                      <div class="ayuda">
+                        <div class="button">
+                          <div class="picture"><img class="width-100" src="img/ayuda.svg" alt="tittle" loading="lazy">
+                            <div class="ayuda--tooltip">
+                              <picture> 
+                                <source srcset="img/Discord.webp" type="image/webp"><img class="img-fluid" src="img/Discord.png" alt="">
+                              </picture>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="discord-inner-error"><span class="error-input font-error-green error-discord">*Cumple con el filtro de escritura (Nombre#)</span></div>
+                  </div>
+                  <div class="input textarea input_group">
+                    <label class="font-text-14">Comparte tus campeones favoritos</label>
+                    <textarea class="input-altura" id="campeones" name=""></textarea><span class="error-input font-error-green">*Campo requerido</span>
+                  </div>
+                  <div class="input textarea input_group">
+                    <label class="font-text-14">Compártenos ¿Por qué te gusta jugar LOL?</label>
+                    <textarea class="input-altura" id="like" name=""></textarea><span class="error-input font-error-green">*Campo requerido</span>
+                  </div>
+                  <div class="section-checkbox d-flex justify-content-center width-100">
+                    <div class="d-flex justify-content-center width-100">
+                      <div class="row d-flex justify-content-center width-100 mobile-checkbox">
+                        <div class="col-3 d-flex justify-content-center width-100-mobile">
+                          <div class="checkbox align-center">
+                            <div class="group input_group">
+                              <input id="checkConsentimiento" type="checkbox" name="">
+                              <label class="font-text-12" for="checkConsentimiento">Acepto de conformidad el <a class="font-text-12" href="reglamento.html" target="_blank" rel="noopener noreferrer">Reglamento</a></label>
+                            </div>
+                            <div class="group check-inner-red"><span class="error-input font-error-green">*Debes aceptar el reglamento</span></div>
+                          </div>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center width-100-mobile">
+                          <div class="checkbox align-center">
+                            <div class="group input_group">
+                              <input id="checkTYC" type="checkbox" name="">
+                              <label class="font-text-12" for="checkTYC">Acepto los <a class="font-text-12" href="terminos-y-condiciones.html" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a></label>
+                            </div>
+                            <div class="group check-inner-red"><span class="error-input font-error-green">*Debes aceptar los Términos y Condiciones</span></div>
+                          </div>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center width-100-mobile">
+                          <div class="checkbox align-center">
+                            <div class="group input_group">
+                              <input id="checkAviso" type="checkbox" name="">
+                              <label class="font-text-12" for="checkAviso">Acepto el <a class="font-text-12" href="aviso-de-privacidad.html" target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a></label>
+                            </div>
+                            <div class="group check-inner-red"><span class="error-input font-error-green">*Debes aceptar el Aviso de Privacidad</span></div>
+                          </div>
+                        </div>
+                        <div class="col-3 d-flex justify-content-center width-100-mobile">
+                          <div class="checkbox align-center">
+                            <div class="group input_group">
+                              <input id="checkImagen" type="checkbox" name="">
+                              <label class="font-text-12" for="checkImagen">Acepto el <a class="font-text-12" href="#" target="_blank" rel="noopener noreferrer">uso de imagen</a></label>
+                            </div>
+                            <div class="group check-inner-red"><span class="error-input font-error-green">*Debes aceptar el uso de imagen</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="caja-boton">
+                    <button class="boton prm font-btn button-skew" id="btn-registrar" type="button"><span class="registrar">REGISTRARME</span></button>
+                  </div>
+                  <div class="stepper d-flex justify-content-center"><span class="active"></span><span class="active"></span></div>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </main>
+      <div class="sponsors align-v">
+        <picture><img class="img-fluid" src="img/logo-gamers.svg" loading="lazy"></picture>
+        <picture><img class="img-fluid" id="logo-citi" src="img/logo-citi.svg" loading="lazy"></picture>
+        <picture>
+          <source srcset="img/coolNuts.webp" type="image/webp"><img class="img-fluid" src="img/coolNuts.png" loading="lazy">
+        </picture>
+      </div>
+      <script src="js/forms.min.js" defer></script>
+    </body>
+  </head>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preload" href="css/styles.min.css" as="style">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="...">
+    <meta property="og:title" content="...">
+    <meta property="og:description" content="...">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" defer> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js" defer> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" defer> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.min.css">
+    <title>Gamers Unite | Torneo Fornite</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.3/dist/css/datepicker.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.3/dist/js/datepicker-full.min.js" defer> </script>
+    <script src="js/functions.min.js" defer></script>
+    <body>
+      <style>
+        .contador {
+            height:100px;
+            position:fixed;
+            top:0;
+            right:0;
+            background:#12151D;
+            z-index:20;
+            padding:0 48px;
+            display:flex;
+            align-items:center;
+            column-gap:40px;
+        }
+        
+        .contador::before{
+            content:"";
+            width:5px;
+            height:100%;
+            position:absolute;
+            left:0;
+            background:#57DD2A;
+            box-shadow:0 0 10px #57DD2A;
+        }
+        
+        .contador h5{
+            text-shadow:0 0 10px #57DD2A;
+        }
+        
+        .contador ul{
+            list-style:none;
+            display:flex;
+            align-items:center;
+            padding: 0;
+            display: flex;
+            column-gap: 20px;
+            margin:0;
+        }
+        
+        .contador ul li{
+            font-size:12px;
+            color:#fff;
+            display: grid;
+            place-items: center;
+            text-transform:uppercase;
+        }
+        
+        .contador ul li span{
+            font-size:24px;
+            color:#57DD2A;
+            font-weight:bold;
+        }
+        
+        @media(width < 768px){
+            .contador{
+                height:90px;
+                flex-direction:column;
+                justify-content:center;
+                row-gap:6px;
+                padding:0 16px;
+            }
+        
+            .contador::before{
+                width:2px;
+            }
+        
+            .contador h5{
+                font-size:12px;
+            }
+        
+            .contador ul li span{
+                font-size:20px;
+            }
+        }
+        
+      </style>
+      <script>
+        (function () {
+            const second = 1000,
+                minute = second * 60,
+                hour = minute * 60,
+                day = hour * 24;
+        
+            let today = new Date(),
+                dd = String(today.getDate()).padStart(2, "0"),
+                mm = String(today.getMonth() + 1).padStart(2, "0"),
+                yyyy = today.getFullYear(),
+                nextYear = yyyy + 1,
+                dayMonth = "12/12/",
+                birthday = dayMonth + yyyy;
+        
+            today = mm + "/" + dd + "/" + yyyy;
+            if (today > birthday) {
+                birthday = dayMonth + nextYear;
+            }
+            //end
+        
+            const countDown = new Date(birthday).getTime(),
+                x = setInterval(function() {    
+        
+                    const now = new Date().getTime(),
+                        distance = countDown - now;
+        
+                    document.getElementById("days").innerText = Math.floor(distance / (day)),
+                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute));
+        
+        
+                }, 0)
+            }());
+      </script>
+      <div class="contador"> 
+        <h5> <b>¡Nos vemos en la grieta!</b></h5>
+        <ul>
+          <li><span id="days">10</span>DÍAS</li>
+          <li><span id="hours"></span>HRS</li>
+          <li><span id="minutes"></span>MIN</li>
+        </ul>
+      </div>
+      <main class="home">
+        <section class="hero align-h-col"><img class="img-fluid" id="logo-gu" src="" alt="" loading="lazy"></section>
+        <div class="container-black">   
+          <section class="about">
+            <div class="container-xxl container-fluid d-flex justify-content-center">
+              <div class="col-lg-9 justify-content-center d-flex">
+                <div class="about--content">
+                  <h1 class="mb-5">Bienvenido a DragonSoul Cup, un evento único de League of Legends del que tienes que formar parte.</h1>
+                  <h2> Conoce el camino de cuatro capitanes que elegirán a cuatro jugadores de alto elo para armar su equipo de ensueño y comenzar el camino hacia la gloria.</h2>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="premios" id="premios">
+            <div class="personaje-01-lol-pasouno positio-absolute">
+              <picture>
+                <source srcset="img/personaje_01.webp" type="image/webp"><img class="img-fluid" src="img/personaje_01.png" alt="img">
+              </picture>
+            </div>
+            <div class="personaje-02-lol-pasouno positio-absolute">
+              <picture>
+                <source srcset="img/personaje_02.webp" type="image/webp"><img class="img-fluid" src="img/personaje_02.png" alt="img">
+              </picture>
+            </div>
+            <div class="container-xxl container-fluid d-flex flex-column align-items-center">
+              <div class="col-lg-9 justify-content-center d-flex flex-column">
+                <picture class="title-purple"><img src="img/regidstro.svg" alt="tittle" loading="lazy"></picture>
+                <h2 class="sub-tittle">¡Únete a este increíble torneo y demuestra tus habilidades!</h2>
+              </div>
+              <div class="row justify-content-center mt-5 d-flex width-100 mobile-display gap-mobile">
+                <div class="col-6 d-flex justify-content-center margin-top-mobile">
+                  <div class="button green-btn"><a class="show_tonerolol" href="torneo-lol.html"> Torneo LOL</a>
+                    <div class="lol">
+                      <source srcset="img/I2.webp" type="image/webp"><img src="img/I2.png" alt="tittle" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                  <div class="button green-btn"><a class="show_tonerolol" href="cosplay.html"> Cosplay</a>
+                    <div class="lol">
+                      <source srcset="img/I2.webp" type="image/webp"><img src="img/I2.png" alt="tittle" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                  <div class="button green-btn"><a class="show_tonerolol" href="boletaje.html"> BOLETAJE</a>
+                    <div class="lol">
+                      <source srcset="img/I2.webp" type="image/webp"><img src="img/I2.png" alt="tittle" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="recompensas">
+            <div class="container-xxl container-fluid d-flex flex-column align-items-center">
+              <div class="col-lg-9 justify-content-center d-flex flex-column">
+                <picture class="title-purple"><img src="img/premios.svg" alt="tittle" loading="lazy"></picture>
+              </div>
+              <div class="row justify-content-center d-flex width-100 mobile-display">
+                <div class="col-6 d-flex justify-content-center">
+                  <div class="premio-01">
+                    <picture class="title-purple">
+                      <source srcset="img/mancha.webp" type="image/webp"><img src="img/mancha.png" alt="tittle" loading="lazy">
+                    </picture>
+                    <div class="premio-titulo">
+                      <h2 class="premio-01-tittle texto-centrado"> 1er Lugar</h2>
+                    </div>
+                    <h2 class="sub-tittle premio-01-inner premio-mobile"> Los cinco integrantes elegidos por el capitán del equipo dividirán $ 70,000 pesos (pesos 00/100 M.N.).</h2>
+                  </div>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                  <div class="premio-01">
+                    <picture class="title-purple">
+                      <source srcset="img/mancha.webp" type="image/webp"><img src="img/mancha.png" alt="tittle" loading="lazy">
+                    </picture>
+                    <div class="premio-titulo">
+                      <h2 class="premio-01-tittle texto-centrado"> 2do Lugar</h2>
+                    </div>
+                    <h2 class="sub-tittle premio-01-inner premio-mobile"> Los cinco integrantes elegidos por el capitán del equipo dividirán $30,000 pesos (pesos 00/100 M.N.).</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="padding-section cierre">
+            <div class="container-xxl container-fluid d-flex flex-column align-items-center">
+              <div class="col-lg-9 justify-content-center d-flex flex-column">
+                <h2 class="texto-secundario"> Habrá muchas sorpresas durante las transmisiones y en nuestro evento presencial, el 7 de octubre, como nuestro Cosplay Royale. Únete a nosotros en esta aventura.</h2>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <div class="sponsors align-v">
+        <picture><img class="img-fluid" src="img/logo-gamers.svg" loading="lazy"></picture>
+        <picture><img class="img-fluid" id="logo-citi" src="img/logo-citi.svg" loading="lazy"></picture>
+        <picture>
+          <source srcset="img/coolNuts.webp" type="image/webp"><img class="img-fluid" src="img/coolNuts.png" loading="lazy">
+        </picture>
+      </div>
+    </body>
+  </head>
+</html>
